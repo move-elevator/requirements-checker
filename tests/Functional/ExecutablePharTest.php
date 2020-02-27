@@ -11,7 +11,7 @@ class ExecutablePharTest extends TestCase
 {
     public function testTriggerPharAndCheckReturnCode(): void
     {
-        $process = new Process('/usr/local/bin/php ./build/requirements-checker.phar ./build/example-config.yaml');
+        $process = new Process('./build/requirements-checker.phar ./build/example-config.yaml');
         $process->run();
         $this->assertTrue($process->isSuccessful());
     }
