@@ -34,12 +34,9 @@
             "Tooly\\ScriptHandler::installPharTools"
         ],
         "quickcheck": [
-            "/usr/local/bin/php ./vendor/bin/phpcs.phar ./src ./tests ./build ./public --standard=./ruleset.xml --extensions=php",
-            "/usr/local/bin/php ./vendor/bin/phpstan.phar analyse -l max -c ./phpstan.neon ./src",
-            "/usr/local/bin/php ./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox"
-        ],
-        "activate-git-hooks": [
-            "[ -f ./.git/hooks/pre-commit ] || mkdir -p ./.git/hooks/ && ln -snf ../../pre-commit-hook.sh ./.git/hooks/pre-commit"
+            "./vendor/bin/phpcs.phar ./src ./tests ./build ./public --standard=./ruleset.xml --extensions=php",
+            "./vendor/bin/phpstan.phar analyse -l max -c ./phpstan.neon ./src",
+            "./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox"
         ]
     },
     "extra": {
