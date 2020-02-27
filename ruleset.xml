@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ruleset name="php-default-ruleset">
+    <!-- relative path from PHPCS source location -->
+    <config name="installed_paths" value="vendor/slevomat/coding-standard" />
+    <autoload>vendor/autoload.php</autoload>
+    <rule ref="PSR12" />
+
+    <!-- specific sniffs to include -->
+    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma" />
+    <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation" />
+
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireYodaComparison" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition" />
+
+    <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment" />
+
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
+
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators" />
+
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" >
+        <properties>
+            <property name="searchAnnotations" value="true" />
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.PHP.TypeCast" />
+    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
+
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="spacesCountAroundEqualsSign" value="0" />
+            <property name="newlinesCountBetweenOpenTagAndDeclare" value="2" />
+            <property name="newlinesCountAfterDeclare" value="2" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing" />
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint" />
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingAnyTypeHint" />
+    <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint" />
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing" />
+    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
+
+    <rule ref="SlevomatCodingStandard.Variables.UnusedVariable" />
+</ruleset>

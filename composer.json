@@ -1,0 +1,68 @@
+{
+    "name": "move-elevator/requirements-checker",
+    "description": "This package can show an administrator, which configuration is missing to launch your application.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "MoveElevator\\RequirementsChecker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MoveElevator\\RequirementsChecker\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.3",
+        "symfony/yaml": "^4.3",
+        "symfony/console": "^4.3"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "mikey179/vfsstream": "^1.6",
+        "slevomat/coding-standard": "^6.0",
+        "symfony/process": "^4.3",
+        "tm/tooly-composer-script": "^1.4"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@activate-git-hooks",
+            "Tooly\\ScriptHandler::installPharTools"
+        ],
+        "post-update-cmd": [
+            "@activate-git-hooks",
+            "Tooly\\ScriptHandler::installPharTools"
+        ],
+        "quickcheck": [
+            "/usr/local/bin/php ./vendor/bin/phpcs.phar ./src ./tests ./build ./public --standard=./ruleset.xml --extensions=php",
+            "/usr/local/bin/php ./vendor/bin/phpstan.phar analyse -l max -c ./phpstan.neon ./src",
+            "/usr/local/bin/php ./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox"
+        ],
+        "activate-git-hooks": [
+            "[ -f ./.git/hooks/pre-commit ] || mkdir -p ./.git/hooks/ && ln -snf ../../pre-commit-hook.sh ./.git/hooks/pre-commit"
+        ]
+    },
+    "extra": {
+        "tools": {
+            "phpunit": {
+                "url": "https://phar.phpunit.de/phpunit-9.0.1.phar",
+                "sign-url": "https://phar.phpunit.de/phpunit-9.0.1.phar.asc",
+                "force-replace": true
+            },
+            "phpcs": {
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.4/phpcs.phar",
+                "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.4/phpcs.phar.asc",
+                "force-replace": true
+            },
+            "phpstan": {
+                "url": "https://github.com/phpstan/phpstan/releases/download/0.12.10/phpstan.phar",
+                "sign-url": "https://github.com/phpstan/phpstan/releases/download/0.12.10/phpstan.phar.asc",
+                "force-replace": true
+            },
+            "phar-box": {
+                "url": "https://github.com/humbug/box/releases/download/3.8.4/box.phar",
+                "force-replace": true
+            }
+        }
+    }
+}

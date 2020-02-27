@@ -1,0 +1,26 @@
+{
+    "output": "./build/requirements-checker.phar",
+    "main": "./phar-main.php",
+    "finder": [
+        {
+            "name": [
+                "*.php"
+            ],
+            "exclude": [
+                "Test",
+                "test",
+                "Tests",
+                "tests"
+            ],
+            "in": [
+                "src",
+                "public",
+                "vendor"
+            ]
+        },
+        {
+            "name": "phar-main.php",
+            "in": "."
+        }
+    ]
+}

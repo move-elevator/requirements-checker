@@ -1,0 +1,31 @@
+checks:
+    PhpMinimalVersion: 7.3.10
+    ApcCache: true
+    AccessFileSystem: '.'
+    SystemDateTime: true
+    PhpIniSetting:
+        -   phar.readonly: false
+    PhpExtension:
+        - imagick
+        - xdebug
+    PhpClass:
+        - '\DateTime'
+        - '\DomDocument'
+    PhpFunction:
+        - iconv
+        - session_start
+        - json_encode
+        - token_get_all
+        - simplexml_import_dom
+        - libxml_use_internal_errors
+        - mb_strlen
+        - utf8_decode
+        - openssl_open
+        - ftp_connect
+        - mysqli_connect
+        - curl_init
+        - preg_replace
+        - gzopen
+settings:
+    checker-namespaces:
+        - 'MoveElevator\RequirementsChecker\Checker\'

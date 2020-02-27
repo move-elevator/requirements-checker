@@ -1,0 +1,7 @@
+parameters:
+    inferPrivatePropertyTypeFromConstructor: true
+    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        -
+            path: %currentWorkingDirectory%/src/Checker/AccessFileSystemChecker.php
+            message: '#^Unreachable statement - code above always terminates\.$#'
