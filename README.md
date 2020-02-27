@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/move-elevator/requirements-checker.svg?branch=master)](https://travis-ci.org/move-elevator/requirements-checker)
+
 # Requirements-checker
 
 This is a package to check system settings for an easier communication with third party hosters, administrators or 
